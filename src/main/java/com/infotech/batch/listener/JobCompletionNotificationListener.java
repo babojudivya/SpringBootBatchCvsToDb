@@ -34,7 +34,7 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
 		if(jobExecution.getStatus() == BatchStatus.COMPLETED) {
 			log.info("!!! JOB FINISHED! Time to verify the results");
 
-			List<Person> results = jdbcTemplate.query("SELECT first_name, last_name,email,age FROM person", new RowMapper<Person>() {
+			List<Person> results = jdbcTemplate.query("SELECT first_name, last_name,email,age FROM persontablejob", new RowMapper<Person>() {
 				@Override
 				public Person mapRow(ResultSet rs, int row) throws SQLException {
 					return new Person(rs.getString(1), rs.getString(2),rs.getString(3),rs.getInt(4));

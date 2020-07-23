@@ -60,7 +60,7 @@ public class BatchConfiguration {
     public JdbcBatchItemWriter<Person> writer() {
         JdbcBatchItemWriter<Person> writer = new JdbcBatchItemWriter<Person>();
         writer.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<Person>());
-        writer.setSql("INSERT INTO person (first_name, last_name,email,age) VALUES (:firstName, :lastName,:email,:age)");
+        writer.setSql("INSERT INTO persontablejob (first_name, last_name,email,age) VALUES (:firstName, :lastName,:email,:age)");
         writer.setDataSource(dataSource);
         return writer;
     }
